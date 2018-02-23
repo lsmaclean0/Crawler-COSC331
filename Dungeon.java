@@ -12,9 +12,9 @@ public class Dungeon
     Monster monster = new Monster();
     int PlayerLocation = 0;
     int MonsterLoc1;
-    Object MonsterLoc2;
+    int MonsterLoc2;
 
-    //new Scanner Object to get input from the user 
+    //new Scanner Object to get input from the user
     Scanner kyb = new Scanner(System.in);
     Object Direction;
     int NumSpaces;
@@ -24,7 +24,6 @@ public class Dungeon
     */
     public Dungeon() {
         dungeon = new Object[10];
-        
     }
 
 
@@ -37,10 +36,12 @@ public class Dungeon
         }
 
         dungeon [0] = player.toString();
-        
-        //pupulating the dungeon array with monsters 
+
+        //populating the dungeon array with monsters
         MonsterLoc1 = NewMonster();
         dungeon [MonsterLoc1] = monster.toString();
+        MonsterLoc2 = NewMonster();
+        dungeon [MonsterLoc2] = monster.toString();
 
         //loop that stops the game when the player wins
         while(Win != true) {
@@ -48,23 +49,42 @@ public class Dungeon
           //printing the dungeon to the console
           System.out.println(Arrays.toString(dungeon));
 
-
-
           //for loop used to move the player around the dungeon
           while (PlayerLocation < 9){
+
              int NumSpaces;
              System.out.println("Enter the number of spaces you would like to move: ");
              NumSpaces = kyb.nextInt();
              int sum = PlayerLocation + NumSpaces;
+
              if(sum > 9) {
                System.out.println("Please enter a number, x, such that x + PlayerLocation <=9 ");
                NumSpaces = 0;
-               /*throw new ArrayIndexOutOfBoundsException("Enter a number, x, such that the sum of "
-                        + "your players current location + x is less than 9 "); */
              }
 
              //removing the Player icon from the board
              dungeon [PlayerLocation] = " ";
+
+             //loops that checks each spot in the dungeon for a monster before moving the Player icon
+            for(int i = 0; i <= NumSpaces; i++) {
+              int PL = PlayerLocation;
+              if((PlayerLocation+i) == MonsterLoc1) {
+                String attack;
+                System.out.println("You have encountered a Monster! ");
+                System.out.println("Enter A to attack");
+                attack = kyb.next();
+                if(attack.equalsIgnoreCase("a")){
+                  System.out.println("You Defeated the Monster!");
+                  continue;
+               }
+               else{
+                 System.out.println("You died. Better Luck Next Time");
+                 System.exit(0);
+               }
+             }
+            }
+
+
              PlayerLocation += NumSpaces;
 
              //Sets Win to true if the player reaches the end of the dungeon
@@ -72,37 +92,19 @@ public class Dungeon
                System.out.println("You win!");
                Win = true;
              }
-             //loop to check if the player encountered a Monster
-             //if(){
 
-             //}
 
              //changing the location of the player on the board
              dungeon [PlayerLocation] = player.toString();
-
-             //removing the old player icon on the board
-             //dungeon [PlayerLocation - NumSpaces] = " ";
-
              System.out.println(Arrays.toString(dungeon));
-
-
           }
-
       }
-
     }
 
     /**
      * returns true if the player is still in the dungeon
      * @return
      */
-    public boolean Run(){
-        if(PlayerLocation <= 9){
-            return true;
-        }
-        return false;
-    }
-
     /*
     helper method for Start(), generates a new location between 2 and 9
     for a monster
