@@ -1,4 +1,3 @@
-package crawler;
 import java.util.*;
 
 // Author: Luke MacLean
@@ -98,7 +97,8 @@ public class Dungeon
              dungeon [PlayerLocation] = player.toString();
              System.out.println(Arrays.toString(dungeon));
           }
-      }
+       }
+
     }
 
     /**
