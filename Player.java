@@ -1,12 +1,9 @@
-package crawler;
-
 // Author: Luke MacLean
 // Description: Creates a new Player Object to be moved around the dungeon
 
-public class Player
-{
+public class Player {
 
-    Object Player;
+    public Object Player;
 
     /*
     constructor sets Player to "P"
