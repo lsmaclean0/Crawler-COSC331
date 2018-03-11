@@ -1,3 +1,5 @@
+package crawler;
+
 // Author: Luke MacLean
 // Description: Creates a new Player Object to be moved around the dungeon
 
