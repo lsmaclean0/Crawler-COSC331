@@ -1,30 +1,36 @@
-"# Dungeon Crawler" 
-Dungeon Crawler is a very simple dungeon crawler style game where the user (Player) navigates through a dungeon. Within the dungeon the player will encounter Monsters trying to prevent them from reaching the emnd of the dungeon. THe player will battle each monster 
+"## Dungeon Crawler" 
+Dungeon Crawler is a very simple dungeon crawler style game where the user (Player) navigates through a dungeon. Within the dungeon the player will encounter Monsters trying to prevent them from reaching the emnd of the dungeon. The player will have to attack each monster they encounter to reach the end of the dungeon. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
 You must have these installed on your system to run the game
-* NetBeans IDE - Development Environment 
 * Java (V7) or later - Language the game is written in 
 
 
 ### Installing 
 
-A step by step series of examples that tell you have to get a development env running
+1. Download or clone a copy of the files to your Downloads folder of destination of your choice 
 
-1. Open the Netbeans IDE and crate a new project named "Dungeon Crawler" 
-    * you can save this wherever you would like, I used "C:\Users\Luke\Desktop" as an example 
-  
-2. Open the Crawler.java file in the IDE and click run, the little green arrow in the toolbar at the top
+2. unzip the files to to the Desktop for easy access
+
+3. open a new terminal window and naviagate to the desktop by typing "cd Desktop" 
+
+4. You must compie each of the .java files using "javac <FileName>.java" in the terminal window 
+
+5. next Open a new terminal window and change the directory to Desktop using the same insctructions as step 3
+
+6. In the orignal termianl window type "java Crawler" to start he server
+   * you should see "Server starting..." indicating that it started succesfully
+   
+7. in the second terminal window type "java CrawlerClient" to start the game
+   * the game should launch and you should see an array of size 10 with a "P" icon and 1 or 2 "*" icons 
 
 ## Running the Game
 
-After Clciling on the Run icon 
-  * this will open a console window displaying an Array of size 10 with a "P" icon at the first index of the array 
   * the Array is a representation of the Dungeon the player is navigating 
   * The "P" icon represents the Players current location 
   * You will also notice one or two "*" icons in the dungeon, these represent Monsters 
