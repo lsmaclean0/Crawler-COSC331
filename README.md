@@ -1,4 +1,4 @@
-"## Dungeon Crawler" 
+## Dungeon Crawler
 Dungeon Crawler is a very simple dungeon crawler style game where the user (Player) navigates through a dungeon. Within the dungeon the player will encounter Monsters trying to prevent them from reaching the emnd of the dungeon. The player will have to attack each monster they encounter to reach the end of the dungeon. 
 
 ## Getting Started
