@@ -70,7 +70,9 @@ public class Crawler {
                     int NumSpaces;
                     String move = "Enter the number of spaces you would like to move: ";
                     SendPacket(move);
-                    NumSpaces = kyb.nextInt();
+                    int p = (int) GetPacket();
+                    
+                    NumSpaces = p;
                     int sum = PlayerLocation + NumSpaces;
 
                     if(sum > 9) {
@@ -168,8 +170,15 @@ public class Crawler {
         System.out.println("Packet sent...\n" + packet.toString());
     }
     
-    public static void GetPacket(){
-        
+    public static Object GetPacket() throws IOException{
+        Object input = "move";
+        a.equals(input);
+        packet = new DatagramPacket(a, a.length);
+        socket.send(packet);
+        packet = new DatagramPacket(a, a.length);
+        socket.receive(packet);
+        System.out.println("Packet Recived...\n");
+        return (Object) packet;
     }
    
 }
